@@ -1,0 +1,26 @@
+CREATE PROCEDURE AddAsset
+	@assetName varchar(MAX),
+	@assetMake varchar(MAX),
+	@assetModel varchar(50),
+	@assetYear varchar(50),
+	@assetBarcode varchar(50),
+	@assetStatus varchar(50),
+	@assetCondition varchar(50)
+AS
+	INSERT INTO Asset
+	VALUES (@assetName, @assetMake, @assetModel, 
+		@assetYear, @assetBarcode, @assetStatus, @assetCondition)
+
+CREATE PROCEDURE DeleteAsset
+	@assetName varchar(MAX),
+	@assetMake varchar(MAX),
+	@assetModel varchar(50),
+	@assetYear varchar(50),
+	@assetBarcode varchar(50),
+	@assetStatus varchar(50),
+	@assetCondition varchar(50)
+AS
+	DELETE FROM Asset
+	WHERE assetName = @assetName AND @assetMake = assetMake AND
+		@assetYear = assetYear AND @assetBarcode = assetBarcode, @assetStatus = assetStatus AND
+ 		@assetCondition = assetCondition
